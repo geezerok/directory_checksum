@@ -1,4 +1,4 @@
-package rubiconproject;
+package rubiconproject.performance;
 
 import org.junit.Test;
 import rubiconproject.traverse.FileWalker;
@@ -18,7 +18,7 @@ import java.util.Map;
 public class PerformanceTester {
 
     //TODO configure surefire plugin to skip performance tests
-    private static final String TEST_DIR = "/home/serhii.holdun/projects/";
+    private static final String TEST_DIR = "input/";
 
     private static final String OUTPUT_FILE_NAME = "results";
 

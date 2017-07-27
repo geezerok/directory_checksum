@@ -27,12 +27,15 @@ import static java.nio.file.FileVisitResult.CONTINUE;
 public class HashingFilesVisitor extends SimpleFileVisitor<Path> {
 
     /**
-     * Root folder path. Needed in order to relativize absolute file pathes.
+     * Root folder path. Needed in order to relativize absolute file path.
      */
     private final String rootFolder;
 
     /**
      * Concurrent sorted map of file names to hashes.
+     * Despite the overhead bringing by CAS it's still faster on insert/iterate operations,
+     * comparing with TreeMap
+     *
      */
     private Map<String, String> fileNameToHashMap = new ConcurrentSkipListMap<>();
 
